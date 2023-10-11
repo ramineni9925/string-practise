@@ -1,0 +1,200 @@
+1.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	   String s="iNeuron";
+	   StringBuffer s1=new StringBuffer(s);
+	   System.out.println(s1.reverse());
+	}
+}
+------------------------------------------------
+2.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	   String s="Think Twice";
+	   String[] words=s.split("\\s");
+	   String t="";
+	   for(int i=0;i<words.length;i++)
+	   {
+	   StringBuffer s1=new StringBuffer(words[i]);
+	   s1.reverse();
+	   t=t+s1+" ";
+	   }
+	   System.out.println(t);
+	}
+}
+--------------------------------------------------
+3.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	   String s1="hello";
+	   String s2="elhlo";
+	   char[] ch1=s1.toCharArray();
+	   char[] ch2=s2.toCharArray();
+	   Arrays.sort(ch1);
+	   Arrays.sort(ch2);
+	   String s3=new String(ch1);
+	   String s4=new String(ch2);
+	   if(s3.equals(s4))
+	   {
+	       System.out.println("yes they are anagrams");
+	   }
+	   else{
+	       System.out.println("they are not anagrams");
+	   }
+	   
+	}
+}
+-----------------------------------------------
+4.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	  String s="The quick brown fox jumps over the lazy dog";
+	  boolean mark[]=new boolean[26];
+	  int index=0;
+	  for (int i = 0; i < s.length(); i++) {
+            if ('A' <= s.charAt(i)
+                && s.charAt(i) <= 'Z')
+                index = s.charAt(i) - 'A';
+            else if ('a' <= s.charAt(i)
+                     && s.charAt(i) <= 'z')
+ 
+                index = s.charAt(i) - 'a';
+            else
+                continue;
+            mark[index] = true;
+        }
+        int count=0;
+        for(int i=0;i<=25;i++)
+        {
+            if(mark[i])
+            {
+                count++;
+                
+            }
+        }
+        if(count==26)
+        {
+            System.out.println("given string is a panagram");
+        }
+        else{
+            System.out.println("given string is not a panagram");
+        }
+        
+	   
+	}
+}
+--------------------------------------------------
+5.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	  String s="functionalities";
+	  ArrayList<Character> l=new ArrayList<>();
+	  char ch[]=s.toCharArray();
+	  int count=0;
+	  for(int i=0;i<ch.length;i++)
+	  {
+	      count=0;
+	      for(int j=i+1;j<ch.length;j++)
+	      {
+	          if(ch[i]==ch[j])
+	          {
+	              count++;
+	          }
+	      }
+	      if(count>0 && !l.contains(ch[i]))
+	      {
+	         l.add(ch[i]);
+	      }
+	      
+	  }
+	  for(int i=0;i<l.size();i++)
+	  {
+	      System.out.println(l.get(i));
+	  }
+	 
+	   
+	}
+}
+------------------------------------------------------
+6.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	  String s="functionalities";
+	  char ch[]=s.toCharArray();
+	  Arrays.sort(ch);
+	  String s1=new String(ch);
+	  System.out.println(s1);
+	}
+}
+---------------------------------------------------
+7.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	  String s="functionalities";
+	  String s1=s.toLowerCase();
+	  char ch[]=s1.toCharArray();
+	  int vowels=0;
+	  int consonents=0;
+	  for(int i=0;i<ch.length;i++)
+	  {
+	      if((int)ch[i]>=97 && (int)ch[i]<=122)
+	      {
+	      if(ch[i]=='a' || ch[i]=='e' || ch[i]=='i' || ch[i]=='o' || ch[i]=='u')
+	      {
+	          vowels++;
+	      }
+	      else{
+	          consonents++;
+	      }
+	      }
+	  }
+	  System.out.println("Number of vowels are: "+vowels);
+	  System.out.println("Number of consonents are: "+consonents);
+	}
+}
+--------------------------------------------------
+8.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	  String s="hell/.dlk*^7ks*";
+	  char ch[]=s.toCharArray();
+	  int special=0;
+	  for(int i=0;i<ch.length;i++)
+	  {
+	      if((int)ch[i]>=32  && (int)ch[i]<=47)
+	      {
+	          special++;
+	      }
+	      else if((int)ch[i]>=58  && (int)ch[i]<=64)
+	      {
+	          special++;
+	      }
+	      else if((int)ch[i]>=91  && (int)ch[i]<=96)
+	      {
+	          special++;
+	      }
+	      else if((int)ch[i]>=123  && (int)ch[i]<=126)
+	      {
+	          special++;
+	      }
+	  }
+	  System.out.println("Number of special characterss are: "+special);
+	 
+	}
+}
